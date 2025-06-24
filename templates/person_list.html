@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Title</title>
+</head>
+
+<body style="background-color:whitesmoke">
+<h1 style="background-color:darkcyan;text-align:center;margin:auto;color:#8df8bb;font-family: sans-serif;padding:20px">ro'yxatdan o'tganlar jadvali</h1>
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>Company</th>
+            <th>Phone</th>
+            <th>Exist</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for p in person %}
+
+        <tr>
+            <td>{{ forloop.counter }}</td>
+
+            <td><a href="">{{p.first_name}}</a></td>
+            <td>{{p.last_name}}</td>
+            <td>{{p.email}}</td>
+            <td>{{p.company}}</td>
+            <td>{{p.phone}}</td>
+            <td>{{p.exist}}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+
+
+<div class="container">
+    <a href="register" class="button">Ro'yhatdan o'tish</a>
+</div>
+</body>
+</html>
